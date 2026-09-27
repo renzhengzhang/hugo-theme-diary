@@ -164,6 +164,9 @@
   />
 {{ end }}
 
+<!-- Image lightbox, enabled by `enableImageLightbox` in site params -->
+{{- partial "lightbox.html" . }}
+
 <!-- head custom -->
 {{- partial "extended_head.html" . }}
 

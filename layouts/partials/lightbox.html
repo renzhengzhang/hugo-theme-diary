@@ -1,0 +1,6 @@
+{{- if .Site.Params.enableImageLightbox }}
+{{- $lightboxStyles := resources.Get "scss/lightbox.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $lightboxStyles.RelPermalink }}" integrity="{{ $lightboxStyles.Data.Integrity }}" media="screen">
+{{- $lightboxScript := resources.Get "js/lightbox.js" | js.Build | minify | fingerprint }}
+<script src="{{ $lightboxScript.RelPermalink }}" integrity="{{ $lightboxScript.Data.Integrity }}" defer></script>
+{{- end }}
